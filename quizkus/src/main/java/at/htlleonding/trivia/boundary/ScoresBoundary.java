@@ -15,7 +15,7 @@ public class ScoresBoundary {
     @GET
     @Path("/top/{count}")
     @Produces(MediaType.APPLICATION_JSON)
-    public List<Integer> findTopScores(@PathParam("count")int count) {
+    public List<Integer> findTopScores(@PathParam("count") int count) {
         return this.scoresRepository.findTopScores(count).stream().map(s -> s.getPoints()).toList();
     }
 

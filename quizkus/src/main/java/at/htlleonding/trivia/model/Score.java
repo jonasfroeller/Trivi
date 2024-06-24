@@ -3,7 +3,7 @@ package at.htlleonding.trivia.model;
 import jakarta.persistence.*;
 
 @Entity
-@NamedQuery(name=Score.QUERY_FIND_ALL_SORTED, query = "SELECT s FROM Score s ORDER BY s.points DESC")
+@NamedQuery(name = Score.QUERY_FIND_ALL_SORTED, query = "SELECT s FROM Score s ORDER BY s.points DESC")
 public class Score {
     public static final String QUERY_FIND_ALL_SORTED = "Score.findAllSorted";
 

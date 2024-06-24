@@ -1,7 +1,6 @@
 package at.htlleonding.trivia.repository;
 
 import at.htlleonding.trivia.model.Answer;
-import at.htlleonding.trivia.model.Topic;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
 import jakarta.persistence.EntityManager;

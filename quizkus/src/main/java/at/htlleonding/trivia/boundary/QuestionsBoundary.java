@@ -1,7 +1,6 @@
 package at.htlleonding.trivia.boundary;
 
 import at.htlleonding.trivia.dto.QuestionDTO;
-import at.htlleonding.trivia.model.Question;
 import at.htlleonding.trivia.repository.QuestionsRepository;
 import jakarta.inject.Inject;
 import jakarta.ws.rs.GET;
@@ -25,7 +24,7 @@ public class QuestionsBoundary {
     @GET
     @Path("/check-answer/{id}")
     @Produces(MediaType.TEXT_PLAIN)
-    public int calculatePointsForAnswer(@PathParam("id")long idAnswer) {
+    public int calculatePointsForAnswer(@PathParam("id") long idAnswer) {
         //Question question = this.questionsRepository.findQuestionByAnswerId(idAnswer);
         return -1;
     }

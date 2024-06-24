@@ -3,7 +3,6 @@ package at.htlleonding.trivia.repository;
 import at.htlleonding.trivia.model.Score;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
-import jakarta.persistence.Entity;
 import jakarta.persistence.EntityManager;
 import jakarta.transaction.Transactional;
 

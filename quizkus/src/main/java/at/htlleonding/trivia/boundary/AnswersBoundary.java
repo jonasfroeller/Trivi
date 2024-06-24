@@ -16,7 +16,7 @@ public class AnswersBoundary {
     @GET
     @Path("/{id}/check")
     @Produces(MediaType.TEXT_PLAIN)
-    public int checkAnswerAndCalculatePoints(@PathParam("id")long id) {
+    public int checkAnswerAndCalculatePoints(@PathParam("id") long id) {
         return this.quizService.checkAnswerAndCalculatePoints(id);
     }
 }

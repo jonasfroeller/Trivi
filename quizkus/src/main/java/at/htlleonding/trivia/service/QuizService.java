@@ -19,13 +19,12 @@ public class QuizService {
 
         Answer answer = this.answersRepository.findById(answerId);
 
-        if(answer.getCorrect()) {
+        if (answer.getCorrect()) {
             Question question = answer.getQuestion();
 
-            if(question.getMultipleChoice()) {
+            if (question.getMultipleChoice()) {
                 result = POINTS_FOR_MULTIPLE_CHOICE;
-            }
-            else {
+            } else {
                 result = POINTS_FOR_SINGLE_CHOICE;
             }
         }

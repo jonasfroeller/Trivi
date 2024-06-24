@@ -7,10 +7,10 @@ public class Answer {
     @Id
     private Long id;
     private String text;
-    @Column(name="is_correct")
+    @Column(name = "is_correct")
     private Boolean isCorrect;
     @ManyToOne
-    @JoinColumn(name="question_id")
+    @JoinColumn(name = "question_id")
     private Question question;
 
     public Long getId() {

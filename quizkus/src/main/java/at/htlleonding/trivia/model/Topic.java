@@ -5,7 +5,7 @@ import jakarta.persistence.*;
 import java.util.Set;
 
 @Entity
-@NamedQuery(name=Topic.QUERY_FIND_ALL, query = "SELECT t FROM Topic t ORDER BY t.name")
+@NamedQuery(name = Topic.QUERY_FIND_ALL, query = "SELECT t FROM Topic t ORDER BY t.name")
 public class Topic {
     public static final String QUERY_FIND_ALL = "Topic.findAll";
     @Id
@@ -13,9 +13,9 @@ public class Topic {
     private String name;
     @ManyToMany
     @JoinTable(
-            name="Question_Topic",
-            joinColumns = @JoinColumn(name="topic_id", referencedColumnName = "id"),
-            inverseJoinColumns = @JoinColumn(name="question_id", referencedColumnName = "id")
+            name = "Question_Topic",
+            joinColumns = @JoinColumn(name = "topic_id", referencedColumnName = "id"),
+            inverseJoinColumns = @JoinColumn(name = "question_id", referencedColumnName = "id")
     )
     private Set<Question> questions;
 
