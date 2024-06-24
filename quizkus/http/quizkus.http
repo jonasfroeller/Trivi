@@ -1,0 +1,44 @@
+GET http://localhost:8080/api/topics/
+Content-Type: application/json
+
+###
+
+GET http://localhost:8080/api/topics/3/questions
+Content-Type: application/json
+
+###
+
+GET http://localhost:8080/api/questions/random
+Content-Type: application/json
+
+###
+
+#1984 - George Orwell (Single Choice)
+GET http://localhost:8080/api/answers/5/check
+Content-Type: text/plain
+
+###
+
+#European Union - Spain (Multiple Choice)
+GET http://localhost:8080/api/answers/63/check
+Content-Type: text/plain
+
+###
+
+#CPU - Central Power Unit
+GET http://localhost:8080/api/answers/11/check
+Content-Type: text/plain
+
+###
+
+GET http://localhost:8080/api/scores/top/3
+Content-Type: application/json
+
+###
+
+POST http://localhost:8080/api/scores/
+Content-Type: application/json
+
+123
+
+###
