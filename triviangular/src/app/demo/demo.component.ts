@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 import {NgForOf} from "@angular/common";
 
 @Component({
@@ -11,5 +11,5 @@ import {NgForOf} from "@angular/common";
   styleUrl: './demo.component.css'
 })
 export class DemoComponent {
-  names : String[] = ['Homer', 'Marge', 'Bart', 'Lisa', 'Maggie']
+  names: String[] = ['Homer', 'Marge', 'Bart', 'Lisa', 'Maggie']
 }
