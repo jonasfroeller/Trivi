@@ -1,0 +1,13 @@
+footer {
+  padding: 2rem;
+}
+
+footer ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+
+footer ul li a:hover {
+  text-decoration: none;
+}

@@ -1,24 +1,5 @@
-<app-navigation></app-navigation>
-<div class="mx-3 my-2">
-  <div class="d-flex justify-content-end m-2">
-    Your Score: 1234
-  </div>
+<app-header></app-header>
 
-  <div class="text-center m-5">
-    <h4>
-      <span class="badge text-bg-secondary" style="margin-right: 5px;">Literatur</span>
-      <span class="badge text-bg-secondary" style="margin-right: 5px;">Kunst</span>
-    </h4>
-    <h2>
-      Was ist dein Lieblingsfach?
-    </h2>
-    <button class="btn btn-primary btn-lg" style="margin: 10px;" type="button">SEW</button>
-    <button class="btn btn-primary btn-lg" style="margin: 10px;" type="button">Softwareentwicklung</button>
-  </div>
+<app-main></app-main>
 
-  <ul class="list-group">
-    <li *ngFor="let currName of ['Homer', 'Marge', 'Bart', 'Lisa', 'Maggie']; let i = index"
-        class="list-group-item">{{ i }}. {{ currName }}
-    </li>
-  </ul>
-</div>
+<app-footer></app-footer>
