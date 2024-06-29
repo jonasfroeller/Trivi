@@ -7,7 +7,7 @@ import {TopicComponent} from "./components/route/topic/topic.component";
 export function triviaMatcher(segments: UrlSegment[]) {
   const paths = ['', 'home', 'root', 'trivia', 'play', 'game'];
   const matched = paths.includes(segments[0]?.path) || segments.length === 0;
-  return matched ? { consumed: segments } : null;
+  return matched ? {consumed: segments} : null;
 }
 
 export function highScoresMatcher(segments: UrlSegment[]) {
