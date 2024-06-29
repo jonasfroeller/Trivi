@@ -3,6 +3,7 @@ import {QuestionService} from "../../../services/question.service";
 import {Question} from "../../../types/question";
 import {NgForOf} from "@angular/common";
 import {ScoreService} from "../../../services/score.service";
+import {AnswerService} from "../../../services/answer.service";
 
 @Component({
   selector: 'app-trivia',
@@ -16,7 +17,7 @@ import {ScoreService} from "../../../services/score.service";
 export class TriviaComponent implements OnInit {
   activeQuestion: Question | null = null;
 
-  constructor(private questionService: QuestionService, private scoreService: ScoreService) {
+  constructor(private questionService: QuestionService, private answerService: AnswerService, private scoreService: ScoreService) {
   }
 
   ngOnInit(): void {
@@ -32,7 +33,7 @@ export class TriviaComponent implements OnInit {
   }
 
   answerQuestion(answerId: number) {
-    this.questionService.answerQuestion(answerId).subscribe(
+    this.answerService.answerQuestion(answerId).subscribe(
       (points) => {
         this.scoreService.updateScore(points);
       }

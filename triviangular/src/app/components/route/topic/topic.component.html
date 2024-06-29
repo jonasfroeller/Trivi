@@ -1,3 +1,7 @@
-<p>topic works!</p>
+<ul class="list-group">
+  <li *ngFor="let question of topicQuestions" class="list-group-item">
+    {{ question.text }}
+  </li>
 
-<app-question></app-question>
+  <p *ngIf="topicQuestions.length == 0">no questions...</p>
+</ul>

@@ -22,13 +22,13 @@ export class QuestionService {
       }));
   }
 
-  answerQuestion(answerId: number) {
-    const URL = environment.BACKEND_SERVICE.ENDPOINT.ANSWER.CHECK(answerId);
-    console.log("answerQuestion() |", URL);
+  getTopicQuestions(topicId: number) {
+    const URL = environment.BACKEND_SERVICE.ENDPOINT.QUESTION.OF_TOPIC(topicId);
+    console.log("getTopicQuestions() |", URL);
 
-    return this.httpClient.get<number>(URL) // returns points. 0 means wrong => send score to backend, reset points
+    return this.httpClient.get<Question[]>(URL)
       .pipe(tap(r => {
-        console.log("points:", r)
+        console.log(r)
       }));
   }
 }

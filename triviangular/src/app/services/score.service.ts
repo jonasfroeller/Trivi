@@ -26,4 +26,14 @@ export class ScoreService {
         console.log(r)
       }));
   }
+
+  getHighScores(limit: number = 5) {
+    const URL = environment.BACKEND_SERVICE.ENDPOINT.SCORE.HIGH_SCORES(limit);
+    console.log("getHighScores() |", URL);
+
+    return this.httpClient.get<number[]>(URL)
+      .pipe(tap(r => {
+        console.log(r)
+      }));
+  }
 }

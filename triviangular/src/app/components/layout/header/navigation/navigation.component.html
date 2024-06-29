@@ -21,13 +21,11 @@
             Questions
           </a>
           <ul class="dropdown-menu">
-            <!-- mocked for exam purposes: -->
             <li>
-              <a [routerLink]="'questions/1'" class="dropdown-item">Art</a>
-              <a [routerLink]="'questions/5'" class="dropdown-item">Geography</a>
-              <a [routerLink]="'questions/4'" class="dropdown-item">History</a>
-              <a [routerLink]="'questions/3'" class="dropdown-item">Informatics</a>
-              <a [routerLink]="'questions/2'" class="dropdown-item">Literature</a>
+              @for (topic of topics; track topic.id) {
+                <a [routerLinkActive]="['active']" [routerLink]="['/questions', topic.id]"
+                   class="dropdown-item">{{ topic.name }}</a>
+              }
             </li>
           </ul>
         </li>

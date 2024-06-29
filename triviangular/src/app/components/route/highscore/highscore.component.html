@@ -1,1 +1,5 @@
-<p>highscore works!</p>
+<ul class="list-group">
+  <li *ngFor="let score of highScores; let i = index" class="list-group-item">
+    {{ i + 1 }}. {{ score }}
+  </li>
+</ul>

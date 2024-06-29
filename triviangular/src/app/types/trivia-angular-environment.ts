@@ -11,12 +11,14 @@ export interface TriviaAngularEnvironment {
       QUESTION: {
         ROOT: string;
         RANDOM: string;
+        OF_TOPIC: (topicId: number) => string;
       },
       TOPIC: {
         ROOT: string;
       },
       SCORE: {
         ROOT: string;
+        HIGH_SCORES: (limit: number) => string;
       }
     }
   }
