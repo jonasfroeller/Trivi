@@ -1,12 +1,43 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {QuestionService} from "../../../services/question.service";
+import {Question} from "../../../types/question";
+import {NgForOf} from "@angular/common";
+import {ScoreService} from "../../../services/score.service";
 
 @Component({
   selector: 'app-trivia',
   standalone: true,
-  imports: [],
+  imports: [
+    NgForOf
+  ],
   templateUrl: './trivia.component.html',
   styleUrl: './trivia.component.css'
 })
-export class TriviaComponent {
+export class TriviaComponent implements OnInit {
+  activeQuestion: Question | null = null;
 
+  constructor(private questionService: QuestionService, private scoreService: ScoreService) {
+  }
+
+  ngOnInit(): void {
+    this.nextQuestion();
+  }
+
+  nextQuestion() {
+    this.questionService.randomQuestion.subscribe(
+      (question) => {
+        this.activeQuestion = question
+      }
+    );
+  }
+
+  answerQuestion(answerId: number) {
+    this.questionService.answerQuestion(answerId).subscribe(
+      (points) => {
+        this.scoreService.updateScore(points);
+      }
+    );
+
+    this.nextQuestion();
+  }
 }

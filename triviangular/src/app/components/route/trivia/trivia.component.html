@@ -1,1 +1,29 @@
-<p>trivia works!</p>
+@if (activeQuestion) {
+<div class="mx-3 my-2">
+  <div class="text-center m-5">
+    @if (activeQuestion.topics) {
+      <h4>
+        @for (topic of activeQuestion.topics; track topic.id) {
+          <span class="badge text-bg-secondary" style="margin-right: 5px;">{{ topic.name }}</span>
+        } @empty {
+          no topics...
+        }
+      </h4>
+    }
+
+    <h2>
+      {{ activeQuestion.text }}
+    </h2>
+
+    @if (activeQuestion.answers) {
+      @for (answer of activeQuestion.answers; track answer.id) {
+        <button (click)="answerQuestion(answer.id)" class="btn btn-primary btn-lg" style="margin: 10px;" type="button">{{ answer.text }}</button>
+      } @empty {
+        no answers...
+      }
+    }
+  </div>
+</div>
+} @else {
+  failed to load question...
+}

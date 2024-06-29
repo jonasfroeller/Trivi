@@ -1,23 +1,29 @@
+import {TriviaAngularEnvironment} from "../app/types/trivia-angular-environment";
+
 const BACKEND_HOST = "http://127.0.0.1:8080";
 const BACKEND_BASE_PATH = "api";
 
-export const environment = {
+export const environment: TriviaAngularEnvironment = {
   BACKEND_SERVICE: {
     HOST: BACKEND_HOST,
     BASE_PATH: BACKEND_BASE_PATH,
     API_URL: `${BACKEND_HOST}/${BACKEND_BASE_PATH}`,
     ENDPOINT: {
       ANSWER: {
-        PATH: `${BACKEND_HOST}/${BACKEND_BASE_PATH}/answers`
+        ROOT: `${BACKEND_HOST}/${BACKEND_BASE_PATH}/answers`,
+        CHECK: (answerId: number) => {
+          return `${BACKEND_HOST}/${BACKEND_BASE_PATH}/answers/${answerId}/check`;
+        }
       },
       QUESTION: {
-        PATH: `${BACKEND_HOST}/${BACKEND_BASE_PATH}/questions`
+        ROOT: `${BACKEND_HOST}/${BACKEND_BASE_PATH}/questions`,
+        RANDOM: `${BACKEND_HOST}/${BACKEND_BASE_PATH}/questions/random`
       },
       TOPIC: {
-        PATH: `${BACKEND_HOST}/${BACKEND_BASE_PATH}/topics`
+        ROOT: `${BACKEND_HOST}/${BACKEND_BASE_PATH}/topics/`
       },
       SCORE: {
-        PATH: `${BACKEND_HOST}/${BACKEND_BASE_PATH}/scores`
+        ROOT: `${BACKEND_HOST}/${BACKEND_BASE_PATH}/scores/`
       }
     }
   }
