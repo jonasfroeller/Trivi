@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {NgForOf} from "@angular/common";
 import {ScoreService} from "../../../services/score.service";
+import {Score} from "../../../types/highscore";
 
 @Component({
   selector: 'app-highscore',
@@ -12,7 +13,7 @@ import {ScoreService} from "../../../services/score.service";
   styleUrl: './highscore.component.css'
 })
 export class HighscoreComponent implements OnInit {
-  highScores: number[] = [];
+  highScores: Score[] = [];
 
   constructor(private scoreService: ScoreService) {
   }

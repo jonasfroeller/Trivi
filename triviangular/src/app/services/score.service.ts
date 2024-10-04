@@ -2,6 +2,7 @@ import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {environment} from "../../environments/environment";
 import {Subject, tap} from "rxjs";
+import {Score} from "../types/highscore";
 
 @Injectable({
   providedIn: 'root'
@@ -31,7 +32,7 @@ export class ScoreService {
     const URL = environment.BACKEND_SERVICE.ENDPOINT.SCORE.HIGH_SCORES(limit);
     console.log("getHighScores() |", URL);
 
-    return this.httpClient.get<number[]>(URL)
+    return this.httpClient.get<Score[]>(URL)
       .pipe(tap(r => {
         console.log(r)
       }));
