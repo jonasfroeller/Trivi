@@ -3,6 +3,7 @@ import {TriviaComponent} from "./components/route/trivia/trivia.component";
 import {NotFoundComponent} from "./components/route/not-found/not-found.component";
 import {HighscoreComponent} from "./components/route/highscore/highscore.component";
 import {TopicComponent} from "./components/route/topic/topic.component";
+import {SubmitComponent} from "./components/submit/submit.component";
 
 export function triviaMatcher(segments: UrlSegment[]) {
   const paths = ['', 'home', 'root', 'trivia', 'play', 'game'];
@@ -25,6 +26,11 @@ export const routes: Routes = [
     title: "High Scores",
     matcher: highScoresMatcher,
     component: HighscoreComponent
+  },
+  {
+    title: "Submit",
+    path: "submit",
+    component: SubmitComponent
   },
   {
     title: "Topic Questions",
