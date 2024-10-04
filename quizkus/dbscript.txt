@@ -32,16 +32,21 @@ CREATE TABLE Question_Topic (
 -- Create table for storing scores
 CREATE TABLE Score (
     id BIGINT PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
-    points INT
+    nickname VARCHAR(100),
+    email VARCHAR(100),
+    country_of_birth VARCHAR(100),
+    age INT,
+    points INT,
+    date_submitted DATE DEFAULT CURRENT_DATE
 );
 
 -- Insert Scores
-INSERT INTO Score (points) VALUES (30);
-INSERT INTO Score (points) VALUES (45);
-INSERT INTO Score (points) VALUES (70);
-INSERT INTO Score (points) VALUES (15);
-INSERT INTO Score (points) VALUES (50);
-INSERT INTO Score (points) VALUES (5);
+INSERT INTO Score (nickname, email, country_of_birth, age, points) VALUES ('Stinka', 'stinka@meow.at', 'Austria', 16, 15);
+INSERT INTO Score (nickname, email, country_of_birth, age, points) VALUES ('Lilu', 'lilu@whiskas.at', 'Austria', 15, 45);
+INSERT INTO Score (nickname, email, country_of_birth, age, points) VALUES ('EinStein', 'onestone@example.com', '', 76, 70);
+INSERT INTO Score (nickname, email, country_of_birth, age, points) VALUES ('Leiwandowski', 'robert@wp.pl', 'Poland', 35, 5);
+INSERT INTO Score (nickname, email, country_of_birth, age, points) VALUES ('johndoe', 'jd@gmail.com', 'USA', 45, 50);
+INSERT INTO Score (nickname, email, country_of_birth, age, points) VALUES ('Voestler', 'nurderskv@blauweiss.at', 'Austria', 74, 30);
 
 -- Insert Topics
 INSERT INTO Topic (name) VALUES ('Art');

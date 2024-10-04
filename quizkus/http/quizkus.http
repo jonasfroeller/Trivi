@@ -31,7 +31,12 @@ Content-Type: text/plain
 
 ###
 
-GET http://localhost:8080/api/scores/top/3
+GET http://localhost:8080/api/scores/top/5
+Content-Type: application/json
+
+###
+
+GET http://localhost:8080/api/scores/1
 Content-Type: application/json
 
 ###
@@ -39,6 +44,15 @@ Content-Type: application/json
 POST http://localhost:8080/api/scores/
 Content-Type: application/json
 
-123
+{
+  "nickname": "Scarlett",
+  "email": "johannss@online.com",
+  "age": "39",
+  "points": 60
+}
 
 ###
+
+#For testing purposes:
+POST http://localhost:8080/api/scores/reset
+Content-Type: */*

@@ -18,9 +18,21 @@ public class ScoresRepository {
     }
 
     @Transactional
-    public void addScore(int points) {
-        Score score = new Score();
-        score.setPoints(points);
+    public void addScore(Score score) {
         this.entityManager.persist(score);
+
+        this.entityManager.refresh(score);
+    }
+
+    @Transactional
+    public void clearScores() {
+        List<Score> scores = this.entityManager.createNamedQuery(Score.QUERY_FIND_ALL_SORTED, Score.class).getResultList();
+        for (Score currScore : scores) {
+            this.entityManager.remove(currScore);
+        }
+    }
+
+    public Score findById(long id) {
+        return this.entityManager.find(Score.class, id);
     }
 }
