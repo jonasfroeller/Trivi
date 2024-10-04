@@ -1,1 +1,43 @@
-<p>submit works!</p>
+<h1>Submit your score:</h1>
+
+<form [formGroup]="form" class="row g-3">
+  <div class="col-md-6">
+    <label for="nickname" class="form-label">Nickname</label>
+    <input type="text" class="form-control" id="nickname" name="nickname" formControlName="nickname" required>
+    <span class="text-danger" *ngIf="form.get('nickname')?.touched && !form.get('nickname')?.valid">
+        You have to enter your nickname.
+    </span>
+  </div>
+  <div class="col-md-4">
+    <label for="email" class="form-label">Email</label>
+    <input type="email" class="form-control" id="email" name="email" formControlName="email" required>
+    <span class="text-danger" *ngIf="form.get('email')?.touched && !form.get('email')?.valid">
+        You have to enter a valid E-Mail Address.
+    </span>
+  </div>
+  <div class="col-md-2">
+    <label for="age" class="form-label">Age</label>
+    <input type="number" class="form-control" id="age" name="age" formControlName="age" required>
+    <span class="text-danger" *ngIf="form.get('age')?.touched && !form.get('age')?.valid">
+        You have to enter your age and be older than or 13-years-old.
+    </span>
+  </div>
+  <div class="col-12">
+    <label for="country" class="form-label">Country (Optional)</label>
+    <input type="text" class="form-control" id="country" name="country" formControlName="country">
+  </div>
+  <div class="col-12">
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" id="accept" name="accept" formControlName="accept">
+      <label class="form-check-label" for="accept">
+        I accept the Terms Of Use
+      </label>
+      <span class="text-danger" *ngIf="form.get('accept')?.touched && !form.get('accept')?.valid">
+        <br>You have to accept our Terms Of Use.
+      </span>
+    </div>
+  </div>
+  <div class="col-12">
+    <button type="submit" class="btn btn-primary" (click)="onSend()" [disabled]="!form.valid">Submit</button>
+  </div>
+</form>
