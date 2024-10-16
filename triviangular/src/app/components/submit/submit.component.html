@@ -2,42 +2,42 @@
 
 <form [formGroup]="form" class="row g-3">
   <div class="col-md-6">
-    <label for="nickname" class="form-label">Nickname</label>
-    <input type="text" class="form-control" id="nickname" name="nickname" formControlName="nickname" required>
-    <span class="text-danger" *ngIf="form.get('nickname')?.touched && !form.get('nickname')?.valid">
+    <label class="form-label" for="nickname">Nickname</label>
+    <input class="form-control" formControlName="nickname" id="nickname" name="nickname" required type="text">
+    <span *ngIf="form.get('nickname')?.touched && !form.get('nickname')?.valid" class="text-danger">
         You have to enter your nickname.
     </span>
   </div>
   <div class="col-md-4">
-    <label for="email" class="form-label">Email</label>
-    <input type="email" class="form-control" id="email" name="email" formControlName="email" required>
-    <span class="text-danger" *ngIf="form.get('email')?.touched && !form.get('email')?.valid">
+    <label class="form-label" for="email">Email</label>
+    <input class="form-control" formControlName="email" id="email" name="email" required type="email">
+    <span *ngIf="form.get('email')?.touched && !form.get('email')?.valid" class="text-danger">
         You have to enter a valid E-Mail Address.
     </span>
   </div>
   <div class="col-md-2">
-    <label for="age" class="form-label">Age</label>
-    <input type="number" class="form-control" id="age" name="age" formControlName="age" required>
-    <span class="text-danger" *ngIf="form.get('age')?.touched && !form.get('age')?.valid">
+    <label class="form-label" for="age">Age</label>
+    <input class="form-control" formControlName="age" id="age" name="age" required type="number">
+    <span *ngIf="form.get('age')?.touched && !form.get('age')?.valid" class="text-danger">
         You have to enter your age and be older than or 13-years-old.
     </span>
   </div>
   <div class="col-12">
-    <label for="country" class="form-label">Country (Optional)</label>
-    <input type="text" class="form-control" id="country" name="country" formControlName="country">
+    <label class="form-label" for="country">Country (Optional)</label>
+    <input class="form-control" formControlName="country" id="country" name="country" type="text">
   </div>
   <div class="col-12">
     <div class="form-check">
-      <input class="form-check-input" type="checkbox" id="accept" name="accept" formControlName="accept">
+      <input class="form-check-input" formControlName="accept" id="accept" name="accept" type="checkbox">
       <label class="form-check-label" for="accept">
         I accept the Terms Of Use
       </label>
-      <span class="text-danger" *ngIf="form.get('accept')?.touched && !form.get('accept')?.valid">
+      <span *ngIf="form.get('accept')?.touched && !form.get('accept')?.valid" class="text-danger">
         <br>You have to accept our Terms Of Use.
       </span>
     </div>
   </div>
   <div class="col-12">
-    <button type="submit" class="btn btn-primary" (click)="onSend()" [disabled]="!form.valid">Submit</button>
+    <button (click)="onSend()" [disabled]="!form.valid" class="btn btn-primary" type="submit">Submit</button>
   </div>
 </form>

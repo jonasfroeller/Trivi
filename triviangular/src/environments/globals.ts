@@ -28,6 +28,6 @@ export const BACKEND_SERVICE = (BACKEND_HOST: string, BACKEND_BASE_PATH: string)
           }
         }
       }
-    }
+    } as const
   }
 }

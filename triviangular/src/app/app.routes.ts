@@ -1,7 +1,7 @@
 import {Routes, UrlSegment} from '@angular/router';
 import {TriviaComponent} from "./components/route/trivia/trivia.component";
 import {NotFoundComponent} from "./components/route/not-found/not-found.component";
-import {HighscoreComponent} from "./components/route/highscore/highscore.component";
+import {HighScoreComponent} from "./components/route/highscore/high-score.component";
 import {TopicComponent} from "./components/route/topic/topic.component";
 import {SubmitComponent} from "./components/submit/submit.component";
 
@@ -25,7 +25,7 @@ export const routes: Routes = [
   {
     title: "High Scores",
     matcher: highScoresMatcher,
-    component: HighscoreComponent
+    component: HighScoreComponent
   },
   {
     title: "Submit",

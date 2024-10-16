@@ -1,18 +1,19 @@
 import {Component, OnInit} from '@angular/core';
-import {NgForOf} from "@angular/common";
+import {NgForOf, NgIf} from "@angular/common";
 import {ScoreService} from "../../../services/score.service";
 import {Score} from "../../../types/highscore";
 
 @Component({
-  selector: 'app-highscore',
+  selector: 'app-high-score',
   standalone: true,
   imports: [
-    NgForOf
+    NgForOf,
+    NgIf
   ],
-  templateUrl: './highscore.component.html',
-  styleUrl: './highscore.component.css'
+  templateUrl: './high-score.component.html',
+  styleUrl: './high-score.component.css'
 })
-export class HighscoreComponent implements OnInit {
+export class HighScoreComponent implements OnInit {
   highScores: Score[] = [];
 
   constructor(private scoreService: ScoreService) {
@@ -21,6 +22,6 @@ export class HighscoreComponent implements OnInit {
   ngOnInit(): void {
     this.scoreService.getHighScores(5).subscribe(r => {
       this.highScores = r;
-    })
+    });
   }
 }
