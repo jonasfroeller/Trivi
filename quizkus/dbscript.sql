@@ -1,32 +1,32 @@
 -- Create Topic table
 CREATE TABLE Topic (
-                       id BIGINT PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
-                       name VARCHAR(255) NOT NULL
+    id BIGINT PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
+    name VARCHAR(255) NOT NULL
 );
 
 -- Create Question table
 CREATE TABLE Question (
-                          id BIGINT PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
-                          text VARCHAR(255) NOT NULL,
-                          is_multiple_choice BOOLEAN NOT NULL
+    id BIGINT PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
+    text VARCHAR(255) NOT NULL,
+    is_multiple_choice BOOLEAN NOT NULL
 );
 
 -- Create Answer table
 CREATE TABLE Answer (
-                        id BIGINT PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
-                        text VARCHAR(255) NOT NULL,
-                        is_correct BOOLEAN NOT NULL,
-                        question_id BIGINT,
-                        FOREIGN KEY (question_id) REFERENCES Question(id)
+    id BIGINT PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
+    text VARCHAR(255) NOT NULL,
+    is_correct BOOLEAN NOT NULL,
+    question_id BIGINT,
+    FOREIGN KEY (question_id) REFERENCES Question(id)
 );
 
 -- Create association table between Topic and Question
 CREATE TABLE Question_Topic (
-                                question_id BIGINT,
-                                topic_id BIGINT,
-                                FOREIGN KEY (question_id) REFERENCES Question(id),
-                                FOREIGN KEY (topic_id) REFERENCES Topic(id),
-                                PRIMARY KEY (question_id, topic_id)
+    question_id BIGINT,
+    topic_id BIGINT,
+    FOREIGN KEY (question_id) REFERENCES Question(id),
+    FOREIGN KEY (topic_id) REFERENCES Topic(id),
+    PRIMARY KEY (question_id, topic_id)
 );
 
 -- Create table for storing scores
